@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 /**
- * main - point
+ * main - Entry point
  *
- * C program that prints with function printf followed by new line
+ * Discription: C code use printf founction
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-printf("with proper grammar, but the outcome is piece of art,\n");
-return (0);
+	printf("with proper grammar, but the outcome is a pice of art,\n");
+	return (0);
 }
