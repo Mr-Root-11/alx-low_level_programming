@@ -4,6 +4,8 @@
 /**
  * main - Entry point
  *
+ * this program prints Programming is positive, zero, or negative
+ *
  * Return: Always 0 (Success)
 */
 int main(void)
