@@ -1,27 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 /**
- * main - main block
- *
+ * main - Entry point
  * Description: prints all single digit numbers of base 10
  * starting from 0, followed by a new line.
- *
- * Return: 0
- *
  * betty style doc for function main goes there
-*/
+ * Return: 0
+ */
 int main(void)
 {
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
-int i;
+	char c = '0';
 
-for (i = 0; i < 10; i++)
-{
-	printf("%i", i);
-}
-printf("\n");
-return (0);
+	while (c <= '9')
+	{
+		putchar(c);
+		c++;
+	}
+
+	putchar('\n');
+	return (0);
 }

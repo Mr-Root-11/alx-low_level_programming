@@ -1,21 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
-* main - main block
-* Description: print lowercase letters of the alphabet that are not 'q' and 'e'
-* Return: Alwas 0 (sucsses)
-* betty style doc for function main goes there
-*/
-
+ * main - main block
+ * Description: Get a random number and check its last digit, compare it with 5
+ * Return: Always 0
+ * betty style doc for function main goes there
+ */
 int main(void)
 {
-char ch;
-for (ch = 'a' ; ch <= 'z' ; ch++)
-{
-if (ch != 'e' && ch != 'q')
-{
-	putchar(ch);
-}
-}
-putchar('\n');
-return (0);
+	char c = 'a';
+
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
+	}
+
+	putchar('\n');
+	return (0);
 }
