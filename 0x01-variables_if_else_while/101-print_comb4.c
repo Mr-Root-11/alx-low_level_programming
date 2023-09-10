@@ -2,7 +2,7 @@
 
 /**
  * main - prints all possible different combinations of two digits
- * 
+ *
  * Return: ALways 0 (Success)
  *
  * betty style doc for function main goes there
