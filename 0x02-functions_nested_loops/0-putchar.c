@@ -1,32 +1,18 @@
-#include <unistd.h>
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 #include "main.h"
 /**
- * main - Entry point
- * Description: prints '_putchar\n'
- * Return: Always 0 (success)
+ * main - prints _putchar, fllowd by a new linees
+ * Return: Alwys 0 (Success)
  */
 int main(void)
 {
-char str[] = "_putchar";
-int i = 0;
+	char abe[] = "_putchar";
 
-while (str[i] != '\0')
+	int c;
+
+	for (c = 0; c < 8; c++)
 	{
-	char c = str[i];
-
-	_putchar(c);
-	i++;
+		_putchar(abe[c]);
 	}
-return (0);
+	_putchar('\n');
+	return (0);
 }
