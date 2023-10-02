@@ -1,1 +1,1 @@
-C The mother languge
+Static libaries
