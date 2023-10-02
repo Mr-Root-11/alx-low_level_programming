@@ -1,46 +1,49 @@
 #include "main.h"
-
 /**
- * _atoi - converts a string to an integer
- * @s: string to be converted
+ * _atoi -  convert a string to an integer.
+ * @s: string
  *
- * Return: the int converted from the string
+ * Return: if no number in the string 0 otherwise the number.
  */
 int _atoi(char *s)
 {
-	int i, d, n, len, f, digit;
+	unsigned int num = 0;
+	int len = 0, digit, found = 0;
+	char sign, c1, c2;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	while (i < len && f == 0)
+	while (*(s + len) != '\0')
 	{
-		if (s[i] == '-')
-			++d;
-
-		if (s[i] >= '0' && s[i] <= '9')
+		c1 = *(s + len);
+		c2 = *(s + len + 1);
+		if (c1 == ' ')
 		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
+			++len;
+			continue; }
+		if (c1 == '-')
+		{
+			if ((c2 >= '0' && c2 <= '9') || c2 == ' ' || c2 == '-' || c2 == '+')
+			{
+				if (sign == '-')
+					sign = ' ';
+				else
+					sign = '-';
+			}}
+		if (c1 >= '0' && c1 <= '9')
+		{
+			found = 1;
+			digit = 0;
+			while (digit <= 9)
+			{
+				if (*(s + len) == digit + '0')
+					num = (num * 10) + digit;
+				++digit;
+			}
+			if (!(c2 >= '0' &&  c2 <= '9'))
 				break;
-			f = 0;
+			}
+			++len;
 		}
-		i++;
-	}
-
-	if (f == 0)
-		return (0);
-
-	return (n);
+		if (found == 1 && sign == '-')
+			num = -1 * num;
+	return (num);
 }
