@@ -1,51 +1,33 @@
 #include "lists.h"
+#include <stdlib.h>
 
-static listint_t *new_node(const int n);
 /**
- * add_nodeint_end - add a node to the end of a list.
- * @head: pointer of apointer to the head of a list.
- * @n: number value to set the new node to.
- *
- * Return: pointer to the head of a list.
- */
+ * add_nodeint_end - Add a new node at the end of a list.
+ * @head: Address of the first node of a list.
+ * @n: Integer to insert in the new node.
+ * Return: Address of the new node.
+ **/
+
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	listint_t *new, *temp;
+	listint_t *temp, *temp2;
 
-	if (!(*head))
-	{
-		*head = new_node(n);
-		return (*head);
-	}
-
-	temp = *head;
-	while (temp)
-	{
-		if (!temp->next)
-		{
-			new = new_node(n);
-			temp->next = new;
-			break;
-		}
-		temp = temp->next;
-	}
-	return (*head);
-}
-
-/**
- * new_node - creates a new listint_t node.
- * @n: number to place inside the node.
- *
- * Return: pointer to the new node.
- */
-static listint_t *new_node(const int n)
-{
-	listint_t *new;
-
-	new = malloc(sizeof(listint_t));
-	if (!new)
+	temp = malloc(sizeof(listint_t));
+	if (temp == NULL)
 		return (NULL);
-	new->n = n;
-	new->next = NULL;
-	return (new);
+
+	temp->n = n;
+	temp->next = NULL;
+
+	if (*head == NULL)
+	{
+		*head = temp;
+		return (temp);
+	}
+
+	temp2 = *head;
+	while (temp2->next)
+		temp2 = temp2->next;
+	temp2->next = temp;
+	return (temp);
 }
